@@ -1,5 +1,7 @@
 # Test case for Prisma Issue
 
+* <https://github.com/prisma/prisma/issues/14662>
+
 This is a repo showing how prisma's setting of the postgresql `search_path` to
 handle schemas does not work if extensions are installed in a separate
 namespace.  For example [on heroku](https://devcenter.heroku.com/changelog-items/2446).
