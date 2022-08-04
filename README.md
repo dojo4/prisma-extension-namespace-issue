@@ -8,11 +8,14 @@ namespace.  For example [on heroku](https://devcenter.heroku.com/changelog-items
 
 - download the repo
 - make sure you have postgresql installed locally
-- run `./make-heroku-like-environment.sh`
+- run `./setup-test-case.sh`
 - run `nvm use`
 - run `npm install`
-- run `npx prisma migrate dev`
-
+- run
+```
+export DATABASE_URL="postgresql://${USER}@localhost:5432/extension_test?schema=myschema"
+npx prisma migrate dev
+```
 
 Watch it explode:
 
@@ -43,3 +46,7 @@ Position:
 
 DbError { severity: "ERROR", parsed_severity: Some(Error), code: SqlState(E42704), message: "type \"citext\" does not exist", detail: None, hint: None, position: Some(Original(101)), where_: None, schema: None, table: None, column: None, datatype: None, constraint: None, file: Some("parse_type.c"), line: Some(274), routine: Some("typenameType") }
 ```
+
+# Reset
+
+To run the test again, run `./reset-test-case.sh` and then follow Using instructions
